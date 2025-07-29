@@ -5,6 +5,7 @@ public class MovMeteoro : MonoBehaviour
 {
     public Transform posicaoPlaneta;
     public float velocidade = 0.1f;
+    public GameObject debris;
     private Vector3 posicao;
     private Rigidbody rb;
 
@@ -22,6 +23,7 @@ public class MovMeteoro : MonoBehaviour
             gameOverText.gameObject.SetActive(true);
             Destroy(other.gameObject);
             Destroy(gameObject);
+            debris.SetActive(true);
         }
     }
 

@@ -4,8 +4,8 @@ using TMPro;
 public class PontosManager : MonoBehaviour
 {
     public TextMeshProUGUI textoPontos;
-    private int pontos;
-
+    protected int pontos;
+    protected int multiplicador = 1;
     void Start()
     {
         // Carrega os pontos salvos
@@ -16,7 +16,7 @@ public class PontosManager : MonoBehaviour
 
     public void AdicionarPonto()
     {
-        pontos++;
+        pontos += pontos*multiplicador;
         PlayerPrefs.SetInt("Pontos", pontos); // Salva os pontos
         AtualizarTexto();
     }
